@@ -1,0 +1,29 @@
+﻿namespace SectorBuilder.Index
+{
+    public enum SectorSection
+    {
+        Color,
+        Info,
+        Airport,
+        Runway,
+        VOR,
+        NDB,
+        Fix,
+        HighAirway,
+        LowAirway,
+        SID,
+        STAR,
+        ARTCC,
+        ARTCCHigh,
+        ARTCCLow,
+        Label,
+        Geo,
+        Region,
+        Position,
+        Freetext,
+        SIDSTAR,
+        Airspace,
+        Radar,
+        Ground
+    }
+}
