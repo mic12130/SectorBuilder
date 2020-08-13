@@ -27,6 +27,11 @@ namespace SectorBuilder.Index
                 throw new FileMatcherException($"The pattern \"{pattern}\" is invalid.", dir, pattern, e.InnerException);
             }
 
+            if (files.Count() == 0)
+            {
+                throw new FileMatcherException($"Cannot match any files with pattern \"{pattern}\".", dir, pattern, null);
+            }
+
             return files;
         }
     }
