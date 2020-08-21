@@ -50,7 +50,7 @@ namespace SectorBuilder
                 catch (IOException e)
                 {
                     Log.Error($"An IO exception occured while creating the output directory \"{_outputDir}\". Message: \"{e.Message}\".");
-                    throw new ApplicationException("Failed to create the output directory.");
+                    throw new ApplicationException("An IO exception occured while creating the output directory.");
                 }
             }
         }
@@ -73,7 +73,7 @@ namespace SectorBuilder
             catch (IOException e)
             {
                 Log.Error($"An IO exception occured while parsing file list at location \"{_fileListPath}\". Message: \"{e.Message}\".");
-                throw new ApplicationException("Failed to parse file list.");
+                throw new ApplicationException("An IO exception occured while parsing file list.");
             }
             catch (JsonParserException e)
             {
@@ -106,7 +106,7 @@ namespace SectorBuilder
             catch (IOException e)
             {
                 Log.Error($"An IO exception occured while loading index. Message: \"{e.Message}\".");
-                throw new ApplicationException("Failed to load index.");
+                throw new ApplicationException("An IO exception occured while loading index.");
             }
 
             Log.Information($"Index loaded. Indexed files count: {index.SourceFileCollection.Values.SelectMany(v => v).Count()}.");
@@ -125,7 +125,7 @@ namespace SectorBuilder
             }
             catch (IOException e)
             {
-                Log.Error($"An IO exception occured while building sector files. Message: {e.Message}.");
+                Log.Error($"An IO exception occured while building sector files. Message: \"{e.Message}\".");
                 throw new ApplicationException("An IO exception occured while building sector files.");
             }
             Log.Information($"Complete building sector files at location \"{sctPath}\" and \"{esePath}\".");
